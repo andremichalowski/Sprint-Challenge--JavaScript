@@ -139,19 +139,24 @@ Populate the displayNames array with only the animal_name and scientific_name of
 
 */
 const displayNames = [];
-
 zooAnimals.forEach((i) => {
   displayNames.push(`Name: ${i['animal_name']}, Scientific: ${i['scientific_name']}`)
 })
+
 console.log(displayNames);
 
 /* Request 2: .map()
 
-The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
+The zoos need a list of all their animal's names (animal_name only) converted to lower case. 
+'Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
 */
 
 const lowCaseAnimalNames = [];
+zooAnimals.map((i) => {
+  lowCaseAnimalNames.push(i['animal_name'].toLowerCase());
+})
+
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
