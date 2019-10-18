@@ -7,25 +7,48 @@
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
 
+function consume(a, b, cb){
+  return cb(a, b);
+}
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
+function add(x, y, cb) {
+    return (x + y);
+}
+
+function multiply(x, y, cb) {
+  return (x * y);
+}
+
+function greeting(first_name, last_name, cb) {
+  return `Hello ${first_name} ${last_name} nice to meet you!`;
+}
+
+
 
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
-// console.log(consume(2, 2, add)); // 4
-// console.log(consume(10, 16, multiply)); // 160
-// console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
 
-// Explain in your own words why nestedfunction can access the variable internal.
+// Explain in your own words why nested function can access the variable internal.
 
-// Explanation: 
+// Explanation: A nested function can access the variable intrnal because 
+// when a function is declared a new scope is created a long with it 
+// from which all variables within that scope are enclosed in a 
+// lexical/private/internal scope that belongs to that function.
+// The functions and variables in that lexical/private/internal scope are designed to
+// have access and refer to one another inside that scope or outside-up out of that fxn (similar to a car with tinted windows ;) )
+// but they are designed not to have the ability to look further inside functions that are nested further inside.
+// In short nested functions can "look-out" or refer outside their scope but they can not "look-in" functions nested inside them.
 
 
 const external = "I'm outside the function";
