@@ -73,25 +73,31 @@ const graduates = [
 This will be an array of strings.
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universitiesSort = () => { // A. B. 
-  const universities = []; // C. Array for sorted models
-  for (let i=0; i < graduates.length; i++) { // D. for loop
-    //create new new space to store generic values
-    let justSchools = graduates[i]['university']; // E. New statements // (inventory models listed)
-    universities.push(justSchools); // E. // (models pushed to array)
+const universitiesSort = () => {
+  const universities = [];
+  for (let i=0; i < graduates.length; i++) {
+    let justSchools = graduates[i]['university'];
+    universities.push(justSchools);
     }
-    console.log(universities.sort()); // F. // (console log models // .sort fxn added
+    console.log(universities.sort());
 }
 universitiesSort();
 
-/* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
+/* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
+This will be an array of strings.
 
 The resulting contact information strings should have a space between the first name and the email, like this: 
 "Josh josh@example.com"
 
 Log the result of your new array. */
-const contactInfo = [];
-console.log(contactInfo);
+const nameAndEmailSort = () => {
+  const nameAndEmailArray = [];
+  for (let i=0; i < graduates.length; i++) {
+      nameAndEmailArray.push(`${graduates[i]['first_name']} ${graduates[i]['email']}`);
+    }
+    console.log(nameAndEmailArray);
+}
+nameAndEmailSort();
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 const unisWithUni = [];
